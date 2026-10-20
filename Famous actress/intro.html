@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>intro</title>
+<style>
+	 header {
+    background: #5C81AC;
+    padding: 15px 0;
+    text-align: center; 
+  }
+	body {
+    background-color: #C5ABDC;
+    }	
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    list-style: none;
+    margin-left: 62px;
+    margin-right: 27px;
+    font-size: 14px;
+  }
+
+  nav ul li a {
+    text-decoration: none; 
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+  }
+
+  nav ul li a:hover {
+    color: cornflowerblue;
+  }
+	h1 {
+		text-align: center;
+	}
+	.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+#.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img-gallery {
+  width: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.img-gallery img {
+  width: 100%;
+  cursor: pointer;
+  transition: 1s ease;
+}
+
+.img-gallery img:hover {
+  transform: scale(0.8);
+  box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.imageWrapper img {
+  width: 90%;
+  max-width: 500px;
+}
+
+.imageWrapper span {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+	</style>
+</head>
+<body>
+	<header>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./intro.html">Who is Natalie Portman?</a></li>
+          <li><a href="./funfacts.html">Fun facts</a></li>
+          <li><a href="./tv.html">Her movies and TV shows</a></li>
+          <li><a href="./awards.html">Awards</a></li>
+          <li><a href="./charity.html">Her charity work</a></li>
+        </ul>
+      </nav>
+	</header>
+<p>&nbsp;</p>
+<hr>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let images = document.querySelectorAll(".img-gallery img"); // Select all gallery images
+    let wrapper = document.getElementById("wrapper"); // Modal container
+    let imgWrapper = document.getElementById("fullImg"); // Modal image
+    let close = document.querySelector(".imageWrapper span"); // Close button
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            imgWrapper.src = img.src; // Set the modal image to clicked image
+            wrapper.style.display = "flex"; // Show modal
+        });
+    });
+
+    close.addEventListener("click", function () {
+        wrapper.style.display = "none"; // Hide modal when close button is clicked
+    });
+
+    // Close the modal if clicking outside the image
+    wrapper.addEventListener("click", function (event) {
+        if (event.target === wrapper) {
+            wrapper.style.display = "none";
+        }
+    });
+});
+
+  </script>
+	
+<div class="imageWrapper" id="wrapper">
+  <img src="1" id="fullImg" />
+  <span>X</span>
+</div>
+
+<div class="img-gallery">
+  <img src="images/Image gallery 1.jpg" alt = "">
+  <img src="images/Image gallery 2.jpg" alt = "">
+  <img src="images/Image gallery 3.jpg" alt = "">
+  <img src="images/Image gallery 4.jpg" alt = "">
+  <img src="images/Image gallery 5.jpg" alt ="">
+  <img src="images/Image gallery 6.jpg" alt = "">
+  <img src="images/Image gallery 7.jpg" alt = "">
+  <img src="images/Image gallery 8.jpg" alt = "">
+  <img src="images/Image gallery 9.jpg" alt = "">
+</div>
+<hr>
+<p>&nbsp;</p>
+<p>Natalie Portman was born in Israel on June 9th, 1981. Her parents are Jewish and have Polish,Russian,Austrian and Romanian roots. Portman's given birth name was Neta-Lee Hershlag; Neta-Lee is a Hebrew name. When she landed a role in "Leon: The Professional" in 1994, she adopted the stage name of Portman. Portman is the maiden name of her grandmother. </p>
+<p>&nbsp;</p>
+<p> <strong> Education</strong> - Harvard University (A Bachelor of Arts in Psychology).&nbsp;A straight-A student since grade school, she graduated with a couple of honours certificates from Syosset High School in June,1999. She spent a semester in Israel studying spoken Arabic, spoken Hebrew, the history of Israel, the history of Islam, and the Anthrolopogy of Violence.</p>
+<p>Her favourite subjects were biology,math,science,politics,psychology, and various languages.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Occupations</strong> - Actress, director, producer</p>
+<p>If she didn't decide to be an actress, she would've been one of the following: doctor, 
+      , veterinarian, astronaut, broadway dancer, scientist, photographer.</p>
+<p>&nbsp;</p>
+<p><strong>Spouse</strong> - Bejamin Millepied (m. 2012; div 2024)</p>
+<p>&nbsp;</p>
+<p><strong>Children</strong> - Two children, a boy Aleph born on June 7th 2011. And Amalia born on February 22, 2017.</p>
+<p>&nbsp;</p>
+<p><strong>Where does she live?</strong>&nbsp; - She lived in Soho NYC for many years before moving to the west coast and Los Angeles. After getting married to Benjamin Millepied, the family moved to Paris,France in 2014. After Benjamin decided to leave the Paris Opera Ballet in 2016, the family moved back to Los Angeles.</p>
+<p>&nbsp;</p>
+<p><strong>Hobbies</strong> - Her hobbies include dancing (ballet,jazz and tap), reading, ice skating and modelling. She also collects purses and bags.</p>
+    <p>&nbsp;</p>
+<p><strong>Favourite foods</strong> - Her favourite foods include tofu, black beans, chocolate,tea,ice cream,brussel sprouts, grilled cheese and tomato sandwiches, bread,beans,lentils, and pasta.</p>
+    <p>&nbsp;</p>
+<p><strong>Music taste</strong> - Natalie has stated that she listens to old school hip hop and indie music. Her favourite artists include: Björk,PJ Harvey, Juliana Hatfield, Alanis Morissette, Lauryn Hill, The Jackson 5, Jurassic 5, Portishead, Radiohead, Stevie Wonder, Otis Redding, The Beatles, Mozart, Beethoven, Aretha Franklin.</p>
+<p>&nbsp;Her favourite song is "Ben" by Michael Jackson. </p>
+<p>&nbsp;</p>
+<p><strong>Movies and films</strong> - Natalie Portman's favourite filmmakers The Coen Brothers, Martin Scorsese, Michael Haneke, Jacques Audiard, Lynne Ramsay, Jane Campion, and Alexander Payne.</p>
+<p>&nbsp; Her favourite films include Dirty Dancing, Schindler’s List, Amelie, Y Tu Mama Tambien, Days of Heaven, Tiny Furniture, and Please Give.</p>
+<p>&nbsp;</p>
+<p>&nbsp;Her favourite actors include Michael Fassbender, Joseph Gordon Levitt, Leonardo Di Caprio, Jude Law, Clive Owen, Mos Def, Chris Hemsworth, Philip Seymour Hoffman, Jonah Hill, Eric Bana, Sasha Baron Cohen and Brad Pitt. </p>
+<p>&nbsp;Some of her favourite actresses are Meryl Streep, Isabelle Hupert, Julia Roberts, Kate Winslet, Cate Blanchett, Laura Linney, Julianne Moore, Annette Bening, Olivia Thirlby, Kat Dennings, Rooney Mara, Greta Gerwig, Emma Stone, Holly Hunter and Michelle Williams.</p>
+<p>&nbsp;</p>
+<p>Some of her favourite shows are Mad Men, Girls, Transparent, Broad City and two reality shows she has appeared on – Top Chef and Project Runway.</p>
+<p>&nbsp;</p>
+<p><strong><u>&nbsp;What does she read?&nbsp;</u></strong></p>
+<ol>
+  <li>The Diary of Anne Frank&nbsp;</li>
+  <li>Angle of Repose by Wallace Stegner&nbsp;</li>
+  <li>A Tree Grows in Brooklyn by Betty Smith&nbsp;</li>
+  <li>Lolita by Vladimir Nabokov</li>
+  <li>&nbsp;Cloud Atlas by David Mitchell&nbsp;</li>
+  <li>A Tale Of Love And Darkness by Amos Oz Judas by Amos Oz&nbsp;</li>
+  <li>Eating Animals by Jonathan Safran&nbsp;</li>
+  <li>Foer Mythology of Ancient Greece&nbsp;</li>
+  <li>American Pastoral by Philip Roth&nbsp;</li>
+  <li>The Waves by Virginia Woolf&nbsp;</li>
+  <li>Hope in the Dark: Untold Stories,&nbsp;</li>
+  <li>Wild Possibilities by Rebecca Solnit&nbsp;</li>
+  <li>Becoming Ms. Burton by Cari Lynn and Susan Burton&nbsp;</li>
+  <li>Kaddish.com by Nathan Englander&nbsp;</li>
+  <li>The works of Jorie Graham</li>
+</ol>
+<div class="row">
+  <div class="column">
+    <img src="images/Natalie intro 1.jpg" alt="" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/Natalie intro 2.jpg" alt="" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/Natalie intro 3.jpg" alt="3 Fun facts" style="width:100%">
+  </div>
+</div>
+<hr>
+<h1><strong><u>Early life</u></strong></h1>
+<p> Portman and her family first lived in Washington, D.C., they later moved to Connecticut in 1988 and then to Long Island in the year 1990. Natalie has attended both Charles E. Smith Jewish Day School and the Solomon Schechter Day School of Nassau County. Portman has described herself as ambitious and hard working and felt like she was more serious than the other kids her age. When Portman was just ten years old, she was approached by a Revlon agent at a Pizza restaurant. The agent asked her if she wanted to become a child model but Natalie turned down the offer. </p>
+<p>&nbsp;</p>
+<p>Hershlag auditioned for the leading role in Luc Besson's Léon: The Professional (1994). This is when she adopted her grandmother's maiden name, Portman, as her stage name. After filming, Portman went back to school. She enrolled at the Stagedoor Manor performing arts camp, where she portrayed  Anne Shirley in a staging of Anne of Green Gables. Michael Mann recognised her talent in The Professional and offered her the role of the stepdaughter of Al Pacino's character in the movie Heat(1995).</p>
+<p>&nbsp;</p>
+<p></p>
+<p><br>
+</p>
+</body>
+</html>

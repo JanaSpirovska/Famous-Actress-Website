@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tv</title>
+<style>
+	 header {
+	background: #5C81AC;
+    padding: 15px 0;
+    text-align: center; 
+  }
+	body {
+    	background-color: #C5ABDC;
+    }	
+	nav ul {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    padding: 0;
+  	}
+
+  	nav ul li {
+	    list-style: none;
+	    margin-left: 62px;
+	    margin-right: 27px;
+	    font-size: 14px;
+  	}
+
+  	nav ul li a {
+	    text-decoration: none; 
+	    color: #fff;
+	    font-family: Arial;
+	    font-weight: bold;
+	    transition: 0.4s ease-in-out;
+  	}
+
+  	nav ul li a:hover {
+	    color: cornflowerblue;
+  	}
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-button {
+        background-color: #80DBE8;
+
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    #movie-list {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .movie-card {
+        width: 180px;
+        text-align: center;
+    }
+    .movie-card img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .movie-title {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+	  .movie-description {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+        font-style: italic;
+    }
+	p {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./intro.html">Who is Natalie Portman?</a></li>
+                <li><a href="./funfacts.html">Fun facts</a></li>
+                <li><a href="./tv.html">Her movies and TV shows</a></li>
+                <li><a href="./awards.html">Awards</a></li>
+                <li><a href="./charity.html">Her charity work</a></li>
+            </ul>
+        </nav>
+	</header>
+    <div class="dropdown">
+        <button class="dropdown-button">Select a Genre</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showMovies('Action')">Action</a>
+            <a href="#" onclick="showMovies('Comedy')">Comedy</a>
+            <a href="#" onclick="showMovies('Drama')">Drama</a>
+            <a href="#" onclick="showMovies('Romance')">Romance</a>
+            <a href="#" onclick="showMovies('Sci-Fi')">Sci-Fi</a>
+            <a href="#" onclick="showMovies('Thriller')">Thriller</a>
+            <a href="#" onclick="showMovies('Horror')">Horror</a>
+			<a href="#" onclick="showMovies('TV Shows')">TV Shows</a> 
+
+        </div>
+    </div>
+
+    <div id="movie-list"></div>
+
+    <script>
+        const movies = {
+            "Action": [
+                { title: "Leon The Professional", 
+				 image: "images/Leon The Professional.jpg",
+				 description: "Year - (1994), Role - Mathilda Lando"
+				},
+                { title: "Heat", 
+				image: "images/Heat movie.jpg",
+				description: "Year - (1995), Role - Lauren Gustafson"
+				},
+                { title: "V for Vendetta", 
+				image: "images/V For Vendetta movie.jpg",
+				description: "Year - (2006), Role - Evey Hammond"
+				
+				},
+                { title: "Thor", 
+				image: "images/Thor movie.jpg",
+				description: "Year - (2011), Role - Jane Foster"
+				},
+                { title: "Thor: The Dark World", 
+				 image: "images/Thor - The Dark World movie cover.jpg",
+				 description: "Year - (2013), Role - Jane Foster"
+				
+				},
+                { title: "Thor: Love and Thunder", 
+				 image: "images/Thor - Love and Thunder movie cover.jpg",
+				 description: "Year - (2022), Role - Jane Foster / Mighty Thor"
+				}
+            ],
+            "Comedy": [
+                { title: "Everyone Says I Love You", 
+				 image: "images/Everyone Says I Love You.jpg",
+				 description: "Year - (1996), Role - Laura Dandridge"
+
+				},
+                { title: "Beautiful Girls", 
+				 image: "images/Beautiful Girls.jpg",
+				 description: "Year - (1996), Role - Marty"
+
+				},
+                { title: "Mars Attacks!", 
+				 image: "images/Mars Attacks!.jpg",
+				 description: "Year - (1996), Role - Taffy Dale"
+
+				},
+                { title: "The Darjeeling Limited", 
+				image: "images/The Darjeeling Limited.jpg",
+				 description: "Year - (2007), Role - Rhett"
+
+				},
+                { title: "Mr Magorium's Wonder Emporium", 
+				 image: "images/Mr Magorium's Wonder Emporium.jpg",
+				 description: "Year -  (2007), Role - Molly Mahoney"
+				},
+                { title: "Hesher", 
+				 image: "images/Hesher.jpg",
+				 description: "Year - (2010), Role - Nicole"
+
+				},
+                { title: "Your Highness", 
+				 image: "images/Your Highness.jpg",
+				 description: "Year - (2011), Role - Isabel"
+				 },
+				{title: "Jane Got a Gun",
+				 image: "images/Jane Got a Gun.jpg",
+				 description: "Year - (2015), Role - Jane Hammond"
+				},
+            ],
+            "Drama": [
+                { title: "Anywhere But Here", 
+				 image: "images/Anywhere But Here.jpg", 
+				 description: "Year - (1999), Role - Ann August"
+				
+				},
+                { title: "Where the Heart Is", 
+				 image: "images/Where the Heart Is.jpg",
+				 description: "Year - (2000), Role - Novalee Nation"
+				},
+                { title: "Cold Mountain", 
+				 image: "images/Cold Mountain.jpg",
+				 description: "Year - (2003), Role - Sara"
+				},
+                { title: "Closer", 
+				 image: "images/Closer.jpg",
+				 description: "Year - (2004), Role - Alice Ayres/Jane Jones"
+				},
+                { title: "Free Zone", 
+				 image: "images/Free Zone.jpg", 
+				 description: "Year - (2005), Role - Rebecca"
+
+				},
+                { title: "Goya's Ghosts", 
+				 image: "images/Goya's Ghosts.jpg",
+				 description: "Year - (2006), Role - Inés Bilbatúa / Alicia"
+				},
+                { title: "The Other Boleyn Girl", 
+				 image: "images/The Other Boleyn Girl.jpg",
+				 description: "Year - (2008), Role - Anne Boleyn"
+
+				},
+				{title: "The Other Woman",
+				 image: "images/The Other Woman.jpg",
+				 description: "Year - (2009), Role - Emilia Greenleaf"
+				},
+				{title: "Knight of Cups",
+				 image: "images/Knight of Cups.jpg",
+				 description: "Year - (2015), Role - Elizabeth"
+				},
+				{title: "A Tale of Love and Darkness",
+				 image: "images/A Tale of Love and Darkness.jpg",
+				 description: "Year - (2015), Role - Fania Klausner"
+				},
+                { title: "Jackie", 
+				 image: "images/Jackie.jpg",
+				 description: "Year - (2016), Role - Jacqueline Kennedy"
+				},
+				{ title: "Vox Lux", 
+				 image: "images/Vox Lux.jpg", 
+				 description: "Year - (2018), Role - Celeste Montgomery"
+				},
+				{ title: "The Death and Life of John F. Donovan", 
+				 image: "images/The Death and Life of John F. Donovan.jpg",
+				 description: "Year - (2018), Role - Sam Turner"
+				},
+                { title: "Planetarium", 
+				 image: "images/Planetarium.jpg",
+				 description: "Year - (2016), Role - Laura Barlow"
+				},
+				{ title: "Lucy in the Sky", 
+				 image: "images/Lucy in the Sky.jpg",
+				 description: "Year - (2019), Role - Lucy Cola"
+				},
+				{ title: "May December", 
+				 image: "images/May December.jpg",
+				 description: "Year - (2023),Role - Elizabeth Berry"
+				},
+            ],
+            "Romance": [
+                { title: "Garden State", 
+				 image: "images/Garden State.jpg",
+				 description: "Year - (2004), Role - Samantha"
+				},
+                { title: "Paris, je t'aime", 
+				 image: "images/Paris je t'aime.jpg", 
+				 description: "Year - (2006), Role - Francine"
+				},
+                { title: "My Blueberry Nights", 
+				 image: "images/My Blueberry Nights.jpg", 
+				 description: "Year - (2007), Role - Leslie"
+				},
+                { title: "New York, I Love You", 
+				 image: "images/New York I Love You.jpg", 
+				 description: "Year - (2008), Role - Rifka Malone"
+
+				},
+                { title: "No Strings Attached", 
+				 image: "images/No Strings Attached.jpg", 
+				 description: "Year - (2011), Role - Emma Kurtzman"
+				},
+                { title: "Song to Song", 
+				 image: "images/Song to Song.jpg",
+				 description: "Year - (2017), Role - Rhonda"
+				}
+            ],
+            "Sci-Fi": [
+                { title: "Star Wars: Episode I - The Phantom Menace", 
+				 image: "images/Star Wars - Episode 1.jpg",
+				 description: "Year - (1999), Role - Padmé Amidala"
+				},
+                { title: "Star Wars: Episode II - Attack of the Clones", 
+				 image: "images/Star Wars - Episode 2.jpg",
+				 description: "Year - (2002), Role - Padmé Amidala"
+				},
+                { title: "Star Wars: Episode III - Revenge of the Sith", 
+				 image: "images/Star Wars - Episode 3.jpg",
+				 description: "Year - (2005), Role - Padmé Amidala"
+				},
+                { title: "Annihilation", 
+				 image: "images/Annihilation.jpg",
+				 description: "Year - (2018), Role - Lena"
+				}
+            ],
+            "Thriller": [
+                { title: "Domino One", 
+				 image: "images/Domino One.jpg", 
+				 description: "Year - (2005), Role - Dominique Bellamy"
+				},
+                { title: "Brothers", 
+				 image: "images/Brothers.jpg",
+				 description: "Year - (2009), Role - Grace Cahill"
+				}
+            ],
+            "Horror": [
+                { title: "Black Swan", 
+				 image: "images/Black Swan.jpg",
+				 description: "Year - (2010),Role - Nina Sayers / White Swan / Odette"
+				},
+            ],
+			"TV Shows": [
+				{title: "Sesame Street", 
+				 image: "images/Sesame Street.jpg",
+				 description: "Year - (2003), Role - Herself"
+				},
+				{title: "Hitler's Pawn: The Margaret Lambert Story", 
+				 image: "images/Hitler's Pawn.jpg",
+				 description: "Year - (2004), Role - Narrator (voice)"
+				},
+				{title: "Long Way Round", 
+				 image: "images/Long Way Round.jpg",
+				 description: "Year - (2004), Role - Herself"
+				},
+				{title: "Saturday Night Live", 
+				image: "images/Saturday Night Live.jpg",
+				description: "Year - (2006), Role - Host"
+				},
+				{title: "The Armenian Genocide", 
+				 image: "images/The Armenian Genocide.jpg",
+				 description: "Year - (2006), Role - Aurora Mardiganian (voice)"
+				},
+				{title: "The Simpsons", 
+				 image: "images/The Simpsons.jpg",
+				 description: "Year - (2007), Role - Darcy (voice), Episode - Little Big Girl. Year - (2012) Role - Darcy (voice), Episode - Moonshine River."
+				},
+				{title: "Saving a Species: Gorillas on the brink", 
+				 image: "images/Gorillas.jpg",
+				 description: "Year - 2007, Role - Host"
+				},
+				{title: "Angie Tribeca",
+				image: "images/Angie Tribeca.jpg",
+				description: "Year - (2017), Role - Christina Craft"
+				},
+				{title: "Saturday Night Live",
+				 image: "images/SNL 2018.jpg",
+				 description: "Year - (2018), Role - Host"
+				},
+				{title: "What If...?",
+				 image: "images/What If.jpg",
+				 description: "Year - (2021), Role - Jane Foster (voice)"
+				},
+				{title: "Bluey",
+				 image: "images/Bluey.jpg",
+				 description: "Year - (2021), Role - Whale Documentary Narrator (voice)"
+				},
+				{title: "Secrets of the Elephants",
+				 image: "images/The Elephants.jpg",
+				 description: "Year - (2023), Role - Narrator (voice)"
+				},
+			    {title: "Angel City",
+				 image: "images/Angel City.jpg",
+				 description: "Year - (2023), Role - Herself"
+				},
+			    {title: "Lady in the Lake",
+				 image: "images/Lady in the Lake.jpg",
+				 description: "Year - (2024), Role - Maddie Schwartz"
+				},
+			
+
+			]
+        };
+
+        function showMovies(genre) {
+            const movieList = document.getElementById("movie-list");
+            movieList.innerHTML = `<h2>${genre} Movies</h2>` + movies[genre].map(movie => `
+                <div class="movie-card">
+                    <img src="${movie.image || 'placeholder.jpg'}" alt="${movie.title}">
+                    <div class="movie-title">${movie.title}</div>
+                    <div class="movie-description">${movie.description}</div> <!-- Description -->
+                </div>
+            `).join("");
+        }
+    </script>
+<p> So far, Natalie has been in forty seven films. She has appeared in nine TV shows. Portman has also produced at least eight productions. </p>
+<p> Portman has also taken part in several music videos for Saturday Night Live (SNL).</p>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+	<iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/_ra91EqeuYA"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+	</div>
+</body>
+</html>
